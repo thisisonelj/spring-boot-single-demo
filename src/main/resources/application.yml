@@ -1,0 +1,9 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: powerserver   #服务名称
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
