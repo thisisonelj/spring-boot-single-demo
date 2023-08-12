@@ -22,8 +22,6 @@ public class AccountUserDO {
     private String id;
     @Column(name = "user_name")
     private String userName;
-    @Column(name = "role_id")
-    private String roleId;
     @Column(name = "create_time")
     private Date createTime;
     @Column(name = "age")

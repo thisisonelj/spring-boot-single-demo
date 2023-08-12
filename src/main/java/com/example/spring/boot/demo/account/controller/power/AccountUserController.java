@@ -1,5 +1,6 @@
 package com.example.spring.boot.demo.account.controller.power;
 
+import com.example.spring.boot.demo.account.dto.AccountUserDTO;
 import com.example.spring.boot.demo.account.entity.power.AccountUserDO;
 import com.example.spring.boot.demo.account.service.power.AccountUserService;
 import com.example.spring.boot.demo.account.utils.AcctResult;
@@ -21,8 +22,28 @@ public class AccountUserController {
     @Autowired
     private AccountUserService accountUserService;
 
-    @PostMapping(value = "login")
+    @PostMapping(value = "/login")
     AcctResult<Object> accountUserLogin(@RequestBody AccountUserDO accountUserDO, HttpServletResponse response, HttpServletRequest request) {
+        return AcctResult.resultSuccessful(accountUserService.AccountUserLogin(accountUserDO,response,request));
+    }
+
+    @PostMapping(value = "/add")
+    AcctResult<Object> accountUserAdd(@RequestBody AccountUserDTO accountUserDTO, HttpServletResponse response, HttpServletRequest request) {
+        return AcctResult.resultSuccessful(accountUserService.userAdd(accountUserDTO));
+    }
+
+    @PostMapping(value = "/queryall")
+    AcctResult<Object> accountUserQuery(@RequestBody AccountUserDTO accountUserDTO, HttpServletResponse response, HttpServletRequest request) {
+        return AcctResult.resultSuccessful(accountUserService.queryUserAll());
+    }
+
+    @PostMapping(value = "/update")
+    AcctResult<Object> accountUserUpdate(@RequestBody AccountUserDO accountUserDO, HttpServletResponse response, HttpServletRequest request) {
+        return AcctResult.resultSuccessful(accountUserService.AccountUserLogin(accountUserDO,response,request));
+    }
+
+    @PostMapping(value = "/delete")
+    AcctResult<Object> accountUserDelete(@RequestBody AccountUserDO accountUserDO, HttpServletResponse response, HttpServletRequest request) {
         return AcctResult.resultSuccessful(accountUserService.AccountUserLogin(accountUserDO,response,request));
     }
 

@@ -1,9 +1,13 @@
 package com.example.spring.boot.demo.account.service.power;
 
+import com.example.spring.boot.demo.account.dto.AccountUserDTO;
+import com.example.spring.boot.demo.account.entity.power.AccountRoleDO;
 import com.example.spring.boot.demo.account.entity.power.AccountUserDO;
+import com.example.spring.boot.demo.account.entity.power.AccountUserRoleDO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 public interface AccountUserService {
     /**
@@ -22,4 +26,8 @@ public interface AccountUserService {
      * @Return java.lang.Boolean
      **/
     Boolean AccountUserLogin(AccountUserDO accountUserDO, HttpServletResponse response,HttpServletRequest request);
+    List<String> userAdd(AccountUserDTO accountUserDTO);
+    List<AccountUserDTO> queryUserAll();
+    Integer userUpdate(List<AccountUserDO> accountRoleDOList);
+    Integer userDelete(AccountRoleDO accountRoleDO);
 }
