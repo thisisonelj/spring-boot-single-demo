@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * @Author liujun
@@ -38,8 +39,8 @@ public class AccountUserController {
     }
 
     @PostMapping(value = "/update")
-    AcctResult<Object> accountUserUpdate(@RequestBody AccountUserDO accountUserDO, HttpServletResponse response, HttpServletRequest request) {
-        return AcctResult.resultSuccessful(accountUserService.AccountUserLogin(accountUserDO,response,request));
+    AcctResult<Object> accountUserUpdate(@RequestBody List<AccountUserDTO> accountUserDTOList, HttpServletResponse response, HttpServletRequest request) {
+        return AcctResult.resultSuccessful(accountUserService.userUpdate(accountUserDTOList));
     }
 
     @PostMapping(value = "/delete")

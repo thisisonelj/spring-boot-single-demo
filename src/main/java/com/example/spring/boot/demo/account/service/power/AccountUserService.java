@@ -28,6 +28,6 @@ public interface AccountUserService {
     Boolean AccountUserLogin(AccountUserDO accountUserDO, HttpServletResponse response,HttpServletRequest request);
     List<String> userAdd(AccountUserDTO accountUserDTO);
     List<AccountUserDTO> queryUserAll();
-    Integer userUpdate(List<AccountUserDO> accountRoleDOList);
+    List<String> userUpdate(List<AccountUserDTO> accountRoleDTOList);
     Integer userDelete(AccountRoleDO accountRoleDO);
 }

@@ -112,8 +112,27 @@ public class AccountUserServiceImpl implements AccountUserService {
     }
 
     @Override
-    public Integer userUpdate(List<AccountUserDO> accountRoleDOList) {
-        return null;
+    public List<String> userUpdate(List<AccountUserDTO> accountRoleDTOList) {
+        accountUserRoleMapper.delete(new AccountUserRoleDO());
+        accountRoleDTOList.forEach(item ->{
+            AccountUserDO accountUserDO=new AccountUserDO();
+            accountUserDO.setId(item.getId());
+            accountUserDO.setUserName(item.getUserName());
+            accountUserDO.setAge(item.getAge());
+            accountUserDO.setPassWord(item.getPassWord());
+            accountUserDO.setCreateTime(item.getCreateTime());
+            accountUserMapper.updateByPrimaryKey(accountUserDO);
+            List<AccountRoleDO> accountRoleDOList = item.getAccountRoleDOList();
+            accountRoleDOList.forEach(e ->{
+                AccountUserRoleDO accountUserRoleDO=new AccountUserRoleDO();
+                String id = UUID.randomUUID().toString();
+                accountUserRoleDO.setId(id);
+                accountUserRoleDO.setUserId(item.getId());
+                accountUserRoleDO.setRoleId(e.getId());
+                accountUserRoleMapper.insert(accountUserRoleDO);
+            });
+        });
+        return accountRoleDTOList.stream().map(item ->{return item.getId();}).collect(Collectors.toList());
     }
 
     @Override
