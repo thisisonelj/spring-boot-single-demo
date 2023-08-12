@@ -21,9 +21,13 @@ public class AccountPowerDO {
     @Id
     @Column(name = "id")
     private String id;
-    @Column(name = "power_name")
-    private String powerName;
+    @Column(name = "name")
+    private String name;
     @Column(name = "create_time")
     private Date createTime;
+    @Column(name = "power_id")
+    private String powerId;
+    @Column(name = "power_value")
+    private boolean powerValue;
 
 }

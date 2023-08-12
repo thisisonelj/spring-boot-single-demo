@@ -2,7 +2,7 @@ package com.example.spring.boot.demo.account.interceptor;
 
 import com.example.spring.boot.demo.account.entity.power.AccountUserDO;
 import com.example.spring.boot.demo.account.service.power.AccountUserService;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;

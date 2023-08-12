@@ -20,7 +20,7 @@ public interface AccountUserMapper extends BaseMapper<AccountUserDO> {
                         VALUES("role_id","#{roleId}");
                         VALUES("create_time","DATE_FORMAT(#{createTime},'%Y-%m-%d %H:%I:%s')");
                         VALUES("age","#{age}");
-                        VALUES("power_id","#{powerId}");
+                        VALUES("pass_word","#{passWord}");
                      }
                  };
                  return sql.toString();

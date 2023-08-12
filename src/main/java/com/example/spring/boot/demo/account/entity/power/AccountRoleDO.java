@@ -23,8 +23,6 @@ public class AccountRoleDO {
     private String id;
     @Column(name = "role_name")
     private String roleName;
-    @Column(name = "power_id")
-    private String powerId;
     @Column(name = "create_time")
     private Date createTime;
 

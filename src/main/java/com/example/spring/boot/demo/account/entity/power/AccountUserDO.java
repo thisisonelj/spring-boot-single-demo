@@ -24,13 +24,11 @@ public class AccountUserDO {
     private String userName;
     @Column(name = "role_id")
     private String roleId;
-    @Column(name = "power_id")
-    private String powerId;
     @Column(name = "create_time")
     private Date createTime;
     @Column(name = "age")
     private Integer age;
-    @Column(name = "password")
+    @Column(name = "pass_word")
     private String passWord;
 
 }

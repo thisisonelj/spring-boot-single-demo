@@ -86,11 +86,11 @@ buildscript {
         implementation 'ch.qos.logback:logback-classic:1.2.3'
         implementation 'ch.qos.logback:logback-core:1.2.11'
         implementation "org.springframework.boot:spring-boot-devtools"
-        implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
         implementation 'org.springframework.boot:spring-boot-starter-web'
         implementation 'redis.clients:jedis:3.6.0'
         implementation 'org.springframework.boot:spring-boot-starter-data-redis'
         implementation 'org.apache.commons:commons-pool2'
+        implementation 'org.apache.commons:commons-lang3'
     }
 
     wrapper {
