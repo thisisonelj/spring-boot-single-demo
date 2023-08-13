@@ -136,7 +136,14 @@ public class AccountUserServiceImpl implements AccountUserService {
     }
 
     @Override
-    public Integer userDelete(AccountRoleDO accountRoleDO) {
-        return null;
+    public String userDelete(AccountUserDTO accountUserDTO) {
+        List<AccountRoleDO> accountRoleDOList = accountUserDTO.getAccountRoleDOList();
+        AccountUserDO accountUserDO=new AccountUserDO();
+        accountUserDO.setId(accountUserDTO.getId());
+        accountUserMapper.delete(accountUserDO);
+        AccountUserRoleDO accountUserRoleDO=new AccountUserRoleDO();
+        accountUserRoleDO.setUserId(accountUserDTO.getId());
+        accountUserRoleMapper.delete(accountUserRoleDO);
+        return accountUserDTO.getId();
     }
 }

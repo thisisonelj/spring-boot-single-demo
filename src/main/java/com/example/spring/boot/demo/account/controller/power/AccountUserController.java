@@ -44,8 +44,8 @@ public class AccountUserController {
     }
 
     @PostMapping(value = "/delete")
-    AcctResult<Object> accountUserDelete(@RequestBody AccountUserDO accountUserDO, HttpServletResponse response, HttpServletRequest request) {
-        return AcctResult.resultSuccessful(accountUserService.AccountUserLogin(accountUserDO,response,request));
+    AcctResult<Object> accountUserDelete(@RequestBody AccountUserDTO accountUserDTO, HttpServletResponse response, HttpServletRequest request) {
+        return AcctResult.resultSuccessful(accountUserService.userDelete(accountUserDTO));
     }
 
 }

@@ -31,6 +31,7 @@ public interface AccountUserRoleMapper extends BaseMapper<AccountUserRoleDO> {
                     FROM("account_user as u");
                     LEFT_OUTER_JOIN("account_user_role as ur on u.id=ur.user_id");
                     LEFT_OUTER_JOIN("account_role as r on ur.role_id=r.id");
+                    ORDER_BY("u.create_time");
                 }
             };
             return sql.toString();

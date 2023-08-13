@@ -29,5 +29,5 @@ public interface AccountUserService {
     List<String> userAdd(AccountUserDTO accountUserDTO);
     List<AccountUserDTO> queryUserAll();
     List<String> userUpdate(List<AccountUserDTO> accountRoleDTOList);
-    Integer userDelete(AccountRoleDO accountRoleDO);
+    String userDelete(AccountUserDTO accountUserDTO);
 }
