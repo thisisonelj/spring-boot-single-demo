@@ -85,7 +85,7 @@ buildscript {
         implementation 'org.slf4j:slf4j-api:1.7.25'
         implementation 'ch.qos.logback:logback-classic:1.2.3'
         implementation 'ch.qos.logback:logback-core:1.2.11'
-        implementation "org.springframework.boot:spring-boot-devtools"
+//        implementation "org.springframework.boot:spring-boot-devtools"
         implementation 'org.springframework.boot:spring-boot-starter-web'
         implementation 'redis.clients:jedis:3.6.0'
         implementation 'org.springframework.boot:spring-boot-starter-data-redis'

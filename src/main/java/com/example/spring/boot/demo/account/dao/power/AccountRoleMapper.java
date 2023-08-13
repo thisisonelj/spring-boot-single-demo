@@ -12,4 +12,5 @@ import tk.mybatis.mapper.common.BaseMapper;
 
 @Repository
 public interface AccountRoleMapper extends BaseMapper<AccountRoleDO> {
+
 }
