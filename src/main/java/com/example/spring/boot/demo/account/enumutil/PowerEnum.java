@@ -1,4 +1,4 @@
-package com.example.spring.boot.demo.account.entity.power;
+package com.example.spring.boot.demo.account.enumutil;
 
 /**
  * @Author liujun

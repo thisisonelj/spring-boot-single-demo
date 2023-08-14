@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import com.example.spring.boot.demo.account.entity.power.ExportPowerInfo;
+import com.example.spring.boot.demo.account.entity.extra.ExportPowerInfo;
 import com.example.spring.boot.demo.account.utils.excel.ExcelUtil;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
@@ -16,7 +16,7 @@ import com.example.spring.boot.demo.account.dao.power.AccountPowerMapper;
 import com.example.spring.boot.demo.account.dao.power.AccountRoleMapper;
 import com.example.spring.boot.demo.account.dto.AccountPowerDTO;
 import com.example.spring.boot.demo.account.entity.power.AccountPowerDO;
-import com.example.spring.boot.demo.account.entity.power.PowerEnum;
+import com.example.spring.boot.demo.account.enumutil.PowerEnum;
 import com.example.spring.boot.demo.account.service.AccountPowerService;
 import org.springframework.web.multipart.MultipartFile;
 

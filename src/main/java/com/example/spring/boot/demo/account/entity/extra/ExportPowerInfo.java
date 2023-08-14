@@ -1,4 +1,4 @@
-package com.example.spring.boot.demo.account.entity.power;
+package com.example.spring.boot.demo.account.entity.extra;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.metadata.BaseRowModel;
