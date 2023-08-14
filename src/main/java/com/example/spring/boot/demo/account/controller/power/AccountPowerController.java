@@ -5,11 +5,10 @@ import com.example.spring.boot.demo.account.entity.power.AccountPowerDO;
 import com.example.spring.boot.demo.account.service.AccountPowerService;
 import com.example.spring.boot.demo.account.utils.AcctResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -41,5 +40,15 @@ public class AccountPowerController {
     @PostMapping("/delete")
     public AcctResult<Object> updateAccountPower(@RequestBody AccountPowerDTO accountPowerDTO){
         return AcctResult.resultSuccessful(accountPowerService.deleteAccountPower(accountPowerDTO));
+    }
+
+    @PostMapping("/import")
+    public AcctResult<Object> importAccountPower(@RequestParam("file") MultipartFile file){
+        return AcctResult.resultSuccessful(accountPowerService.importAccountPower(file));
+    }
+
+    @PostMapping("/export")
+    public void exportAccountPower(@RequestBody List<AccountPowerDTO> accountPowerDTOList, HttpServletResponse response){
+       accountPowerService.exportAccountPower(accountPowerDTOList,response);
     }
 }
